@@ -3,7 +3,7 @@ import { FilterQuery, Query } from "mongoose";
 class queryBuilders<T> {
   public modelQuery: Query<T[], T>;
   public query: Record<string, unknown>;
-  
+
   constructor(modelQuery: Query<T[], T>, query: Record<string, unknown>) {
     this.modelQuery = modelQuery;
     this.query = query;
@@ -20,7 +20,7 @@ class queryBuilders<T> {
         $or: orConditions,
       });
     }
-    
+
     return this;
   }
 
