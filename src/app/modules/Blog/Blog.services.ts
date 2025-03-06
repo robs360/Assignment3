@@ -23,13 +23,16 @@ const getSingleBlogForDb = async (id: string) => {
   };
   const getAllBlogsForDb = async (query: Record<string, unknown>) => {
     console.log(query)
+    
     const blogQuerys = new queryBuilders(blogsModel.find().populate("author"), query)
       .search(["title"])
       .filter()
       .sort()
       .sortOrder();
     const result = await blogQuerys.modelQuery;
-    return result;
+    console.log("result ",result)
+
+    
   };
 const deleteBlogFromDB=async (id:string)=>{
     const query = { _id: new ObjectId(id) };

@@ -41,7 +41,7 @@ const getAllBlogsForDb = (query) => __awaiter(void 0, void 0, void 0, function* 
         .sort()
         .sortOrder();
     const result = yield blogQuerys.modelQuery;
-    return result;
+    console.log("result ", result);
 });
 const deleteBlogFromDB = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const query = { _id: new mongodb_1.ObjectId(id) };
